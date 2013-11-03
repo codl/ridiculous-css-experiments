@@ -1,0 +1,113 @@
+<html>
+<head>
+ <title>侵略</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+    html {
+        animation: holy .5s linear infinite;
+        -webkit-animation: holy .5s linear infinite;
+        overflow: hidden;
+    }
+    body {
+        margin: 0;
+        height: 100%;
+        animation: joker 1.3s ease-in-out alternate infinite;
+        -webkit-animation: joker 1.3s ease-in-out alternate infinite;
+        background: repeating-radial-gradient(circle, transparent, transparent 1em, cyan 1em, cyan 2em);
+    }
+    iframe {
+        display: none;
+    }
+    @-webkit-keyframes holy {
+        0% {
+            background-color: white;
+        }
+        50% {
+            background-color: #0ff;
+        }
+        100% {
+            background-color: #1cc;
+        }
+    }
+    @-webkit-keyframes joker {
+        0% {
+            font-size: .1em;
+        }
+        100% {
+            font-size: 10em;
+        }
+    }
+    @keyframes holy {
+        0% {
+            background-color: white;
+        }
+        50% {
+            background-color: #0ff;
+        }
+        100% {
+            background-color: #1cc;
+        }
+    }
+    @keyframes joker {
+        0% {
+            font-size: .1em;
+        }
+        100% {
+            font-size: 10em;
+        }
+    }
+    p.shinryaku {
+        line-height: 0;
+        font-size: 10rem;
+        position: absolute;
+        -webkit-animation: rain .6s ease-in;
+        -webkit-animation-fill-mode: forwards;
+        animation: rain .6s ease-in;
+        animation-fill-mode: forwards;
+        min-width: 2em;
+        color: white;
+        text-shadow:
+            -5px -5px 0 cyan,
+             5px -5px 0 cyan,
+             5px  5px 0 cyan,
+            -5px  5px 0 cyan;
+    }
+    @keyframes rain {
+        0% {
+            opacity: .5;
+            top: -70%;
+        }
+        100% {
+            opacity: 1;
+            top: 100%;
+        }
+    }
+    @-webkit-keyframes rain {
+        0% {
+            opacity: .5;
+            top: -70%;
+        }
+        100% {
+            opacity: 1;
+            top: 100%;
+        }
+    }
+    </style>
+    <script>
+        function rain(){
+            var newp = document.querySelector("p.shinryaku").cloneNode();
+            newp.style.left = (Math.random() * 150 - 50)+ "%";
+            function removeSelf(){
+                document.body.removeChild(newp);
+            }
+            newp.addEventListener("animationend", removeSelf, false)
+            document.body.appendChild(newp);
+        }
+        window.setInterval(rain, 100);
+    </script>
+</head>
+<body>
+<iframe src="http://youtube.com/embed/wCcLrC4MuLI?autoplay=1"></iframe>
+<p class="shinryaku">侵略</p>
+</body>
+</html>
